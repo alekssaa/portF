@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --vh: 1vh;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --vh: 1dvh; /* Koristi dynamic viewport height za bolje rezultate */
+  }
+}
