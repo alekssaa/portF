@@ -3,6 +3,8 @@ import { Vortex } from "./ui/vortex.tsx";
 import Img from "../assets/img/slika_cleanup.jpg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Button from "./Button.jsx";
+import cv from "../assets/cv.pdf";
 
 export function VortexDemoSecond() {
   const cardVariants = {
@@ -10,7 +12,7 @@ export function VortexDemoSecond() {
     visible: { opacity: 1, y: 0 },
   };
   return (
-    <div className="w-screen h-screen overflow-hidden">
+    <div className="relative h-screen w-screen overflow-hidden">
       <Vortex
         backgroundColor="black"
         rangeY={800}
@@ -65,12 +67,29 @@ export function VortexDemoSecond() {
           }}
           className="flex flex-col sm:flex-row items-center gap-4 mt-6"
         >
-          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
+          <Button
+            containerClass={
+              " bg-gray-800 hover:bg-gray-500  shadow-[0px_2px_0px_0px_#FFFFFF40_inset]"
+            }
+          >
             <Link to="/project">Check out my work.</Link>
-          </button>
-          <button className="px-4 py-2 text-white sm:transform:translateX(-50px)">
+          </Button>
+          <Button
+            containerClass={
+              " bg-gray-800 hover:bg-gray-500  shadow-[0px_2px_0px_0px_#FFFFFF40_inset]"
+            }
+          >
             <Link to="/aboutandcontact">Contact and About Me</Link>
-          </button>
+          </Button>
+          <a className="cursor-pointer text-white" href={cv} download="Resume">
+            <Button
+              containerClass={
+                " bg-gray-800 hover:bg-gray-400  shadow-[0px_2px_0px_0px_#FFFFFF40_inset]"
+              }
+            >
+              Download CV
+            </Button>
+          </a>
         </motion.div>
       </Vortex>
     </div>

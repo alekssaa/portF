@@ -1,12 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root {
-  --vh: 1vh;
-}
+/* body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+} */
 
-@media (max-width: 640px) {
-  :root {
-    --vh: 1dvh; /* Koristi dynamic viewport height za bolje rezultate */
-  }
+.width_max {
+  @apply h-[100vh];
 }

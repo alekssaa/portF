@@ -1,12 +1,12 @@
-"use client";
-import React from "react";
 import { BackgroundBeams } from "./ui/background-beams.tsx";
 import { socialLinks } from "../data.js";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Button from "./Button.jsx";
+import cv from "../assets/cv.pdf";
 export function BackgroundBeamsDemo() {
   return (
-    <div className="w-full  h-screen-adjust rounded-md bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
+    <div className="w-full min-h-screen width_max rounded-md bg-neutral-950  flex flex-col items-center justify-center overflow-auto relative antialiased">
       <div className="max-w-2xl mx-auto p-4 text-2xl">
         <motion.h1
           initial={{ opacity: 0 }}
@@ -29,9 +29,10 @@ export function BackgroundBeamsDemo() {
           }}
           className="text-white max-w-lg mx-auto my-2 text-sm text-center relative "
         >
-          <h3 className="text-2xl mb-3">
+          <span className="text-2xl mb-3">
             Seeking New Opportunities as a Frontend Developer!
-          </h3>
+          </span>{" "}
+          <br />
           <span className="font-bold">Hello everyone,</span> My name is
           Aleksandar, I am actively looking for new challenges in the IT field.
           I am ready to bring my skills to a new organization.
@@ -46,7 +47,7 @@ export function BackgroundBeamsDemo() {
           className="text-white max-w-lg mx-auto my-2 text-sm text-center relative "
         >
           <span className="font-bold">Expertise in Programming:</span>{" "}
-          Proficient in React and Java Script.I am currently learning Next.js.
+          Proficient in React and Java Script.I am currently learning Three.js.
           My experience includes implementing APIs, optimizing database
           performance, and creating dynamic web applications that enhance user
           experience.
@@ -105,7 +106,7 @@ export function BackgroundBeamsDemo() {
           {socialLinks.map((link) => {
             return (
               <a
-                className="text-white text-4xl hover:text-sky-500 hover:text-5xl"
+                className="text-white text-4xl hover:text-sky-500 border-50 "
                 target="_blank"
                 key={link.id}
                 href={link.link}
@@ -114,6 +115,9 @@ export function BackgroundBeamsDemo() {
               </a>
             );
           })}
+          <a className="cursor-pointer text-white" href={cv} download="Resume">
+            <Button>Download CV</Button>
+          </a>
         </motion.div>
       </div>
       <BackgroundBeams className="absolute inset-0 z-0 pointer-events-none" />
@@ -127,14 +131,22 @@ export function BackgroundBeamsDemo() {
         className="flex mb-3 flex-col sm:flex-row text-white items-center gap-6 sm:gap-4 mt-6"
       >
         <Link to="/">
-          <button className="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
+          <Button
+            containerClass={
+              " bg-gray-800 hover:bg-gray-500  shadow-[0px_2px_0px_0px_#FFFFFF40_inset]"
+            }
+          >
             Home Page
-          </button>
+          </Button>
         </Link>
         <Link to="/project">
-          <button className="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base bg-green-800 hover:bg-green-500 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
+          <Button
+            containerClass={
+              " bg-gray-800 hover:bg-gray-500  shadow-[0px_2px_0px_0px_#FFFFFF40_inset]"
+            }
+          >
             Check out my work
-          </button>
+          </Button>
         </Link>
       </motion.div>
     </div>

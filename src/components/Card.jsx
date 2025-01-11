@@ -5,6 +5,7 @@ import { projects } from "../data.js";
 import { CardDemo } from "./CardBox.jsx";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Button from "./Button.jsx";
 
 export function Card() {
   return (
@@ -32,26 +33,38 @@ export function Card() {
           damping: 10,
           delay: 0.4,
         }}
-        className="flex flex-col sm:flex-row text-white items-center gap-6 sm:gap-4 mt-6"
+        className="flex flex-col sm:flex-row text-white items-center gap-6 sm:gap-4 mt-6 "
       >
         <Link to="/">
-          <button className="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
+          <Button
+            containerClass={
+              " bg-gray-800 hover:bg-gray-500  shadow-[0px_2px_0px_0px_#FFFFFF40_inset]"
+            }
+          >
             Home Page
-          </button>
+          </Button>
         </Link>
         <Link to="/aboutandcontact">
-          <button className="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base bg-green-800 hover:bg-green-500 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
-            Contact and About Me
-          </button>
+          <Button
+            containerClass={
+              " bg-gray-800 hover:bg-gray-500  shadow-[0px_2px_0px_0px_#FFFFFF40_inset]"
+            }
+          >
+            Contact and About me
+          </Button>
         </Link>
         <Link
           to="https://github.com/alekssaa?tab=repositories"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base bg-gray-400 hover:bg-gray-600 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
-            See more on GitHub
-          </button>
+          <Button
+            containerClass={
+              " bg-gray-800 hover:bg-gray-500  shadow-[0px_2px_0px_0px_#FFFFFF40_inset]"
+            }
+          >
+            Git Hub
+          </Button>
         </Link>
       </motion.div>
       <BackgroundBeams className="absolute inset-0 z-0 pointer-events-none" />
