@@ -4,7 +4,7 @@ import Error from "./components/Error";
 
 function App() {
   return (
-    <div className="flex flex-col h-screen sm:h-[80vh] md:h-[60vh] lg:h-[50vh] w-full overflow-hidden">
+    <div className="flex flex-col h-screen sm:h-[80vh] md:h-[60vh] lg:h-[50vh] w-full">
       <div className="flex-grow">
         <Router>
           <Routes>
