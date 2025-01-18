@@ -12,6 +12,7 @@ import menu from "./assets/img/menu.jpg";
 import shop from "./assets/img/shop.jpg";
 import portfolioimg from "./assets/img/portfolio.jpg";
 import login from "./assets/img/login.jpg";
+import zentry from "./assets/img/zentry.jpg";
 
 export const links = [
   {
@@ -37,6 +38,24 @@ export const links = [
 export const projects = [
   {
     id: 1,
+    name: "Brainwave",
+    description:
+      "A website designed for gaining new experience with Tailwind and GSAP.",
+    technologies: ["Vite,", "Tailwind CSS,", "JavaScript,"],
+    url: "https://brainewave.netlify.app/",
+    img: brainwaveimg,
+  },
+  {
+    id: 2,
+    name: "Zentry",
+    description:
+      "The website that won the award for best design. Credit goes to JSM.",
+    technologies: ["Recat, ", "Tailwind CSS, ", "JavaScript, "],
+    img: zentry,
+    url: "https://cute-meringue-90f317.netlify.app/",
+  },
+  {
+    id: 3,
     name: "Apple iPhone15",
     description:
       "An iPhone 15 website created with the goal of gaining knowledge in the field of GSAP and THREE.js.",
@@ -50,40 +69,23 @@ export const projects = [
     img: iphone,
     url: "https://appwebs.netlify.app/",
   },
-
   {
-    id: 2,
-    name: "Brainwave",
-    description:
-      "A website designed for gaining new experience with Tailwind and GSAP.",
-    technologies: ["Vite,", "Tailwind CSS,", "JavaScript,"],
-    url: "https://brainewave.netlify.app/",
-    img: brainwaveimg,
-  },
-  {
-    id: 3,
+    id: 4,
     name: "Ecommerce",
     description: "A web shop designed for selling various products.",
-    technologies: ["Recat, ", "CSS, ", "HTML, ", "JavaScript, "],
+    technologies: ["Recat, ", "CSS, ", "JavaScript, Tailwind CSS "],
     img: shop,
     url: "https://ecomer-cesite.netlify.app/",
   },
   {
-    id: 4,
+    id: 5,
     name: "ExpenseTracker",
     description: "An application designed for tracking expenses.",
-    technologies: ["Recat, ", "CSS, ", "HTML, ", "JavaScript, "],
+    technologies: ["Recat, ", "CSS, ", "JavaScript, "],
     img: ExpenseTracker,
     url: "https://stellar-croquembouche-204763.netlify.app/",
   },
-  {
-    id: 5,
-    name: "Menu",
-    description: "A restaurant menu featuring a selection of various dishes.",
-    technologies: ["Recat, ", "CSS, ", "HTML, ", "JavaScript, "],
-    img: menu,
-    url: "https://github.com/alekssaa/Menu/tree/main/menu%20-%20setup",
-  },
+
   {
     id: 6,
     name: "Login",
@@ -98,7 +100,7 @@ export const projects = [
     description: "A reminder and to-do list application.",
     technologies: ["Recat, ", "CSS, "],
     img: coffee,
-    url: "https://github.com/alekssaa/Todo",
+    url: "https://caffeeshop.netlify.app/",
   },
   {
     id: 8,
