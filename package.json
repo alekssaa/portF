@@ -13,7 +13,9 @@
     "react-image": "^4.1.0",
     "react-router-dom": "^7.0.2",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.30.3",
     "simplex-noise": "^4.0.3",
+    "slick-carousel": "^1.8.1",
     "tailwind-merge": "^2.5.5",
     "web-vitals": "^4.2.4"
   },

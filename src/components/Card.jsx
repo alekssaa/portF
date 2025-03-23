@@ -6,10 +6,67 @@ import { CardDemo } from "./CardBox.jsx";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Button from "./Button.jsx";
-
+import Slider from "react-slick";
+import { useRef } from "react";
 export function Card() {
+  const sliderRef = useRef(null);
+
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "30px",
+    slidesToShow: 3,
+    speed: 500,
+    rows: 1,
+    slidesPerRow: 2,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          rows: 1,
+          slidesPerRow: 2,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+          rows: 1,
+          slidesPerRow: 1,
+        },
+      },
+      {
+        breakpoint: 780,
+        settings: {
+          slidesToShow: 1,
+          rows: 1,
+          slidesPerRow: 2,
+        },
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 2,
+          rows: 1,
+          slidesPerRow: 1,
+        },
+      },
+      {
+        breakpoint: 640, // Telefoni
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "-50px",
+          slidesPerRow: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <div className="min-h-screen sm:h-auto w-auto rounded-md bg-neutral-950 relative flex flex-col flex-wrap items-center justify-center antialiased p-4">
+    <div className="h-screen w-auto  rounded-md overflow-hidden  bg-neutral-950 relative flex flex-col flex-wrap items-center justify-center antialiased p-4">
       <motion.h1
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -21,10 +78,12 @@ export function Card() {
       >
         Previous Projects
       </motion.h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 m-7">
-        {projects.map((project) => {
-          return <CardDemo key={project.id} project={project} />;
-        })}
+      <div className="w-full max-w-6xl mx-auto px-2 sm:px-4 ">
+        <Slider {...settings}>
+          {projects.map((project) => {
+            return <CardDemo key={project.id} project={project} />;
+          })}
+        </Slider>{" "}
       </div>
       <motion.div
         initial={{ opacity: 0 }}
@@ -33,7 +92,7 @@ export function Card() {
           damping: 10,
           delay: 0.4,
         }}
-        className="flex flex-col sm:flex-row text-white items-center gap-6 sm:gap-4 mt-6 "
+        className="flex flex-wrap justify-center text-white items-center gap-4 mt-6 w-full text-center"
       >
         <Link to="/">
           <Button
