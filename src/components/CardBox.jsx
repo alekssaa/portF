@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export function CardDemo({ project }) {
   const { name, description, img, url, id } = project;
-  const motionTime = id / 1.9;
+  const motionTime = id / 5.2;
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -13,7 +13,7 @@ export function CardDemo({ project }) {
 
         delay: motionTime,
       }}
-      className="max-w-xs w-full relative overflow-hidden "
+      className="max-w-xs w-full relative overflow-hidden  "
     >
       <div
         className={cn(
